@@ -1,28 +1,40 @@
+
+
+
 // $primary-color: #0077cc;
 // $primary-hover: #005fa3;
 // $bg-color: #f9f9f9;
 // $text-color: #333;
-// $red-color:red;
+// $red-color: red;
 // $light-text-color: #080808;
 // $box-shadow-color: rgba(0, 0, 0, 0.1);
 // $border-radius: 8px;
 // $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-// body {
-//   font-family: $font-family;
+// html, body {
+//   height: 100%;
 //   margin: 0;
 //   padding: 0;
 //   background-color: $bg-color;
 //   color: $text-color;
+//   font-family: $font-family;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 // }
 
 // .App {
 //   max-width: 900px;
+//   width: 100%;
 //   margin: 20px auto;
 //   padding: 0 20px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
 // }
 
 // header {
+//   width: 100%;
 //   text-align: center;
 //   margin-bottom: 40px;
 
@@ -35,8 +47,15 @@
 
 //   nav {
 //     margin-top: 50px;
+//     display: flex;
+//     flex-wrap: wrap;            
+//     justify-content: center;     
+//     gap: 12px;
+
 //     button {
-//       margin: 0 8px;
+//       flex: 1 1 auto;
+//       min-width: 120px;
+//       max-width: 180px;
 //       padding: 10px 20px;
 //       border: none;
 //       background-color: $primary-color;
@@ -45,6 +64,7 @@
 //       font-size: 1rem;
 //       cursor: pointer;
 //       border-radius: $border-radius;
+//       white-space: nowrap;
 //       transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
 //       &:hover {
@@ -64,6 +84,8 @@
 // }
 
 // main {
+//   width: 100%;
+
 //   section, div {
 //     background-color: white;
 //     padding: 25px 30px;
@@ -104,16 +126,14 @@
 // }
 
 // footer {
+//   width: 100%;
 //   text-align: center;
 //   margin: 40px 0 20px;
 //   font-size: 0.9rem;
 //   color: $light-text-color;
 // }
 
-
-// // Responsive//
-
-// // Base styles (for desktop and tablets already given)
+// // Responsive
 
 // @media (max-width: 768px) {
 //   .App {
@@ -128,7 +148,6 @@
 //   nav button {
 //     padding: 8px 14px;
 //     font-size: 0.9rem;
-//     margin: 4px 4px;
 //   }
 
 //   main section, main div {
@@ -142,15 +161,11 @@
 //   }
 
 //   nav {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-
 //     button {
-//       flex: 1 1 45%;  // buttons take about half width
-//       margin: 6px 4px;
+//       flex: 1 1 45%; 
 //       font-size: 0.85rem;
 //       padding: 10px 6px;
+//       white-space: normal; 
 //     }
 //   }
 
@@ -172,11 +187,12 @@
 //     font-size: 1.4rem;
 //   }
 
-//   nav button {
-//     flex: 1 1 100%; // stack nav buttons vertically on very small screens
-//     margin: 6px 0;
-//     font-size: 0.8rem;
-//     padding: 10px 0;
+//   nav {
+//     button {
+//       flex: 1 1 100%;  // stack buttons full width
+//       font-size: 0.8rem;
+//       padding: 10px 0;
+//     }
 //   }
 
 //   main {
@@ -198,10 +214,6 @@
 
 
 
-
-
-
-
 $primary-color: #0077cc;
 $primary-hover: #005fa3;
 $bg-color: #f9f9f9;
@@ -219,25 +231,28 @@ html, body {
   background-color: $bg-color;
   color: $text-color;
   font-family: $font-family;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .App {
   max-width: 900px;
   width: 100%;
-  margin: 20px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding-top: 160px; // For space below fixed header
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color: $bg-color;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 0 4px 6px $box-shadow-color;
   text-align: center;
-  margin-bottom: 40px;
 
   h1 {
     margin-bottom: 12px;
@@ -247,11 +262,10 @@ header {
   }
 
   nav {
-    margin-top: 50px;
-
+    margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;            
-    justify-content: center;     
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
 
     button {
@@ -287,13 +301,16 @@ header {
 
 main {
   width: 100%;
+  margin-top: 5rem;
+  height: 100vh;
 
-  section, div {
+  section {
     background-color: white;
     padding: 25px 30px;
     margin-bottom: 30px;
     border-radius: $border-radius;
     box-shadow: 0 4px 8px $box-shadow-color;
+    transition: opacity 0.3s ease-in-out;
 
     h2 {
       margin-top: 0;
@@ -312,7 +329,6 @@ main {
     ul {
       list-style-type: disc;
       padding-left: 20px;
-      color: $text-color;
 
       li {
         margin-bottom: 8px;
@@ -335,8 +351,7 @@ footer {
   color: $light-text-color;
 }
 
-// Responsive
-
+// Responsive design
 @media (max-width: 768px) {
   .App {
     max-width: 95%;
@@ -352,7 +367,7 @@ footer {
     font-size: 0.9rem;
   }
 
-  main section, main div {
+  main section {
     padding: 20px;
   }
 }
@@ -362,16 +377,14 @@ footer {
     font-size: 1.6rem;
   }
 
-  nav {
-    button {
-      flex: 1 1 45%; 
-      font-size: 0.85rem;
-      padding: 10px 6px;
-      white-space: normal; 
-    }
+  nav button {
+    flex: 1 1 45%;
+    font-size: 0.85rem;
+    padding: 10px 6px;
+    white-space: normal;
   }
 
-  main section, main div {
+  main section {
     padding: 15px 12px;
   }
 
@@ -389,19 +402,17 @@ footer {
     font-size: 1.4rem;
   }
 
-  nav {
-    button {
-      flex: 1 1 100%;  // stack buttons full width
-      font-size: 0.8rem;
-      padding: 10px 0;
-    }
+  nav button {
+    flex: 1 1 100%;
+    font-size: 0.8rem;
+    padding: 10px 0;
   }
 
   main {
     padding: 0 10px;
   }
 
-  main section, main div {
+  main section {
     padding: 12px 8px;
   }
 
@@ -413,6 +424,3 @@ footer {
     font-size: 1rem;
   }
 }
-
-
-

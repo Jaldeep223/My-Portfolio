@@ -28,12 +28,24 @@ function App() {
       </header>
 
       <main>
-        {activeSection === 'about' && <About />}
-        {activeSection === 'skills' && <Skills />}
-        {activeSection === 'experience' && <Experience />}
-        {activeSection === 'education' && <Education />}
-        {activeSection === 'projects' && <Projects />}
-        {activeSection === 'contact' && <Contact />}
+        <section style={{ display: activeSection === 'about' ? 'block' : 'none' }}>
+          <About />
+        </section>
+        <section style={{ display: activeSection === 'skills' ? 'block' : 'none' }}>
+          <Skills />
+        </section>
+        <section style={{ display: activeSection === 'experience' ? 'block' : 'none' }}>
+          <Experience />
+        </section>
+        <section style={{ display: activeSection === 'education' ? 'block' : 'none' }}>
+          <Education />
+        </section>
+        <section style={{ display: activeSection === 'projects' ? 'block' : 'none' }}>
+          <Projects />
+        </section>
+        <section style={{ display: activeSection === 'contact' ? 'block' : 'none' }}>
+          <Contact />
+        </section>
       </main>
 
       <footer>
@@ -44,4 +56,5 @@ function App() {
 }
 
 export default App;
+
 
