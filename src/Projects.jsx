@@ -14,15 +14,16 @@ function Projects() {
         </ul>
       </div>
 
-      <div>
-        <h3>E-Commerce Landing Page (HTML, CSS, Bootstrap, JavaScript)</h3>
+   <div>
+        <h3>Instagram Clone (React.js,JavaScript, SCSS)</h3>
         <ul>
-          <li>Designed a modern, user-friendly interface for an e-commerce platform.</li>
-          <li>Implemented product filtering and search functionality.</li>
-          <li>Ensured cross-browser compatibility and mobile responsiveness.</li>
+          <li>Built a social media platform clone with user authentication and real-time updates.</li>
+          <li>Implemented photo upload, likes, comments, and user profiles.</li>
+          <li>Used Firebase for backend services including Firestore database and storage.</li>
         </ul>
       </div>
     </div>
+  
   );
 }
 
