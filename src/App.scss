@@ -1,0 +1,418 @@
+// $primary-color: #0077cc;
+// $primary-hover: #005fa3;
+// $bg-color: #f9f9f9;
+// $text-color: #333;
+// $red-color:red;
+// $light-text-color: #080808;
+// $box-shadow-color: rgba(0, 0, 0, 0.1);
+// $border-radius: 8px;
+// $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// body {
+//   font-family: $font-family;
+//   margin: 0;
+//   padding: 0;
+//   background-color: $bg-color;
+//   color: $text-color;
+// }
+
+// .App {
+//   max-width: 900px;
+//   margin: 20px auto;
+//   padding: 0 20px;
+// }
+
+// header {
+//   text-align: center;
+//   margin-bottom: 40px;
+
+//   h1 {
+//     margin-bottom: 12px;
+//     font-weight: 700;
+//     font-size: 2.8rem;
+//     color: $red-color;
+//   }
+
+//   nav {
+//     margin-top: 50px;
+//     button {
+//       margin: 0 8px;
+//       padding: 10px 20px;
+//       border: none;
+//       background-color: $primary-color;
+//       color: white;
+//       font-weight: 600;
+//       font-size: 1rem;
+//       cursor: pointer;
+//       border-radius: $border-radius;
+//       transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+//       &:hover {
+//         background-color: $primary-hover;
+//       }
+
+//       &:focus {
+//         outline: 2px solid darken($primary-color, 20%);
+//       }
+
+//       &.active {
+//         background-color: darken($primary-color, 10%);
+//         box-shadow: 0 0 10px $box-shadow-color;
+//       }
+//     }
+//   }
+// }
+
+// main {
+//   section, div {
+//     background-color: white;
+//     padding: 25px 30px;
+//     margin-bottom: 30px;
+//     border-radius: $border-radius;
+//     box-shadow: 0 4px 8px $box-shadow-color;
+
+//     h2 {
+//       margin-top: 0;
+//       margin-bottom: 20px;
+//       border-bottom: 3px solid $primary-color;
+//       padding-bottom: 8px;
+//       font-size: 2rem;
+//     }
+
+//     h3 {
+//       margin-bottom: 10px;
+//       color: $primary-color;
+//       font-weight: 700;
+//     }
+
+//     ul {
+//       list-style-type: disc;
+//       padding-left: 20px;
+//       color: $text-color;
+
+//       li {
+//         margin-bottom: 8px;
+//         line-height: 1.5;
+//       }
+//     }
+
+//     p {
+//       line-height: 1.6;
+//       margin-bottom: 15px;
+//     }
+//   }
+// }
+
+// footer {
+//   text-align: center;
+//   margin: 40px 0 20px;
+//   font-size: 0.9rem;
+//   color: $light-text-color;
+// }
+
+
+// // Responsive//
+
+// // Base styles (for desktop and tablets already given)
+
+// @media (max-width: 768px) {
+//   .App {
+//     max-width: 95%;
+//     padding: 0 15px;
+//   }
+
+//   header h1 {
+//     font-size: 2rem;
+//   }
+
+//   nav button {
+//     padding: 8px 14px;
+//     font-size: 0.9rem;
+//     margin: 4px 4px;
+//   }
+
+//   main section, main div {
+//     padding: 20px;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   header h1 {
+//     font-size: 1.6rem;
+//   }
+
+//   nav {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+
+//     button {
+//       flex: 1 1 45%;  // buttons take about half width
+//       margin: 6px 4px;
+//       font-size: 0.85rem;
+//       padding: 10px 6px;
+//     }
+//   }
+
+//   main section, main div {
+//     padding: 15px 12px;
+//   }
+
+//   main h2 {
+//     font-size: 1.5rem;
+//   }
+
+//   main h3 {
+//     font-size: 1.1rem;
+//   }
+// }
+
+// @media (max-width: 365px) {
+//   header h1 {
+//     font-size: 1.4rem;
+//   }
+
+//   nav button {
+//     flex: 1 1 100%; // stack nav buttons vertically on very small screens
+//     margin: 6px 0;
+//     font-size: 0.8rem;
+//     padding: 10px 0;
+//   }
+
+//   main {
+//     padding: 0 10px;
+//   }
+
+//   main section, main div {
+//     padding: 12px 8px;
+//   }
+
+//   main h2 {
+//     font-size: 1.3rem;
+//   }
+
+//   main h3 {
+//     font-size: 1rem;
+//   }
+// }
+
+
+
+
+
+
+
+$primary-color: #0077cc;
+$primary-hover: #005fa3;
+$bg-color: #f9f9f9;
+$text-color: #333;
+$red-color: red;
+$light-text-color: #080808;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-family;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: $red-color;
+  }
+
+  nav {
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;            
+    justify-content: center;     
+    gap: 12px;
+
+    button {
+      flex: 1 1 auto;
+      min-width: 120px;
+      max-width: 180px;
+      padding: 10px 20px;
+      border: none;
+      background-color: $primary-color;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: $border-radius;
+      white-space: nowrap;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+
+      &:focus {
+        outline: 2px solid darken($primary-color, 20%);
+      }
+
+      &.active {
+        background-color: darken($primary-color, 10%);
+        box-shadow: 0 0 10px $box-shadow-color;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+
+  section, div {
+    background-color: white;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px $box-shadow-color;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 3px solid $primary-color;
+      padding-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: $primary-color;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: $text-color;
+
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 0.9rem;
+  color: $light-text-color;
+}
+
+// Responsive
+
+@media (max-width: 768px) {
+  .App {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  main section, main div {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    button {
+      flex: 1 1 45%; 
+      font-size: 0.85rem;
+      padding: 10px 6px;
+      white-space: normal; 
+    }
+  }
+
+  main section, main div {
+    padding: 15px 12px;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 365px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav {
+    button {
+      flex: 1 1 100%;  // stack buttons full width
+      font-size: 0.8rem;
+      padding: 10px 0;
+    }
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  main section, main div {
+    padding: 12px 8px;
+  }
+
+  main h2 {
+    font-size: 1.3rem;
+  }
+
+  main h3 {
+    font-size: 1rem;
+  }
+}
+
+
+
