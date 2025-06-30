@@ -15,7 +15,6 @@ This is my personal portfolio website built using **React** and **Sass (SCSS)**.
 - Projects showcase with links  
 - Modern UI with smooth transitions  
 - Contact information section  
-- Optional resume download
 
 ## 🚀 Deployment
 
